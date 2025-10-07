@@ -1,16 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-import "../css/navbar.css"
+import "../css/Navbar.css"
 function NavBar(){
     return(
-        <nav>
+        <header className="app-nav">
+          <nav>
             <h1>Manga Comics</h1>
             <div>
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
             </div>
-        </nav>
+          </nav>
+        </header>
     )
 }
 

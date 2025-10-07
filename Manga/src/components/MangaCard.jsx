@@ -1,16 +1,17 @@
 
 function MangaCard({manga}) {
+  const placeholder = '/vite.svg';
   return (
-    <div className="manga-card">MangaCard
+    <article className="manga-card">
         <div className="manga-poster">
-            <img src= {manga.url} alt={manga.title} />
+            <img src={manga.url || placeholder} alt={manga.title || 'Manga poster'} />
         </div>
         <div className="manga-info">
             <h3>{manga.title}</h3>
-            <p>{manga.chapters}</p>
+            <p className="muted">{manga.chapters ? `${manga.chapters} chapters` : 'Chapters unknown'}</p>
 
         </div>
-    </div>
+    </article>
   )
 }
 

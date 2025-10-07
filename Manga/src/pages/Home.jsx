@@ -1,6 +1,7 @@
 import MangaCard from "../components/MangaCard";
 import { useState, useEffect } from "react";
-import { fetchMangaDetails, fetchMangaList, getImageUrl } from "../services/API";
+import { fetchMangaDetails, fetchMangaList } from "../services/api";
+import "../css/Home.css"
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -27,17 +28,17 @@ function Home() {
         manga.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
     return (
-        <div className="home">
+        <div className="home container">
             <div className="search-bar">
-                <input> </input>
-                <button>Search</button>
+                <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search manga..." />
+                <button onClick={() => { /* optionally trigger something */ }}>Search</button>
             </div>
             {loading ? (
                 <p>Loading...</p>
             ) : (
                 <div className="manga-list">
                     {filteredManga.map(manga => (
-                        <div key={manga.id} onClick={() => handleMangaClick(manga.id)}>
+                        <div key={manga.id} className="manga-item" onClick={() => handleMangaClick(manga.id)}>
                             <MangaCard manga={manga} />
                         </div>
                     ))}
@@ -46,7 +47,7 @@ function Home() {
             {selectedManga && (
                 <div className="manga-details">
                     <h2>{selectedManga.title}</h2>
-                    <img src={getImageUrl(selectedManga.url)} alt={selectedManga.title} />
+                    <img src={selectedManga.url} alt={selectedManga.title} />
                     <p>{selectedManga.synopsis}</p>
                     <p><strong>Authors:</strong> {selectedManga.authors}</p>
                     <p><strong>Genres:</strong> {selectedManga.genres}</p>

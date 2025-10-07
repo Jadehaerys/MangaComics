@@ -1,0 +1,50 @@
+/* Navbar styles */
+.app-nav {
+	background: linear-gradient(90deg, #0f172a 0%, #0b2238 100%);
+	color: #fff;
+	padding: 0.75rem 1.25rem;
+	box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+nav {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+h1 {
+	margin: 0;
+	font-size: 1.35rem;
+	letter-spacing: 0.6px;
+}
+
+nav > div {
+	display: flex;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+nav a {
+	color: rgba(255,255,255,0.9);
+	text-decoration: none;
+	padding: 0.45rem 0.75rem;
+	border-radius: 8px;
+	transition: background-color 160ms, transform 160ms;
+}
+nav a:hover {
+	background: rgba(255,255,255,0.06);
+	transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+	nav {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	nav > div {
+		width: 100%;
+		justify-content: space-between;
+	}
+}

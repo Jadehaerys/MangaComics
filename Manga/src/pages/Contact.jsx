@@ -1,7 +1,7 @@
-function contact() {
+function Contact() {
     return (
-        <div>
-            <h1>Contact Page</h1>
+        <div className="container">
+            <h1>Contact</h1>
             <p>If you have any questions, suggestions, or feedback, feel free to reach out to us!</p>
             <ul>
                 <li>Email: jmykelvenz@gmail.com </li>
@@ -9,4 +9,4 @@ function contact() {
         </div>
     )
 }
-export default contact
+export default Contact
